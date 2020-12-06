@@ -4,6 +4,7 @@ let blueSlider = document.getElementById("blueSlider");
 let redVal = document.getElementById("redVal");
 let greenVal = document.getElementById("greenVal");
 let blueVal = document.getElementById("blueVal");
+let body = document.body;
 
 let paint = document.querySelector('#paint');
 let ctx = paint.getContext("2d");
@@ -34,15 +35,33 @@ paint.addEventListener('mousemove', e => {
 //update slider value
 redVal.innerHTML = redSlider.value;
 redSlider.oninput = function() {
-  redVal.innerHTML = this.value;
+    redVal.innerHTML = this.value;
+    setColor();
 }
 greenVal.innerHTML = greenSlider.value;
 greenSlider.oninput = function() {
     greenVal.innerHTML = this.value;
+    setColor();
 }
 blueVal.innerHTML = blueSlider.value;
 blueSlider.oninput = function() {
     blueVal.innerHTML = this.value;
+    setColor();
+}
+
+
+function setColor(){
+    let r_hex = parseInt(redSlider.value, 10).toString(16),
+    g_hex = parseInt(greenSlider.value, 10).toString(16),
+    b_hex = parseInt(blueSlider.value, 10).toString(16),
+    hex = "#" + pad(r_hex) + pad(g_hex) + pad(b_hex); 
+    style = hex;
+    body.style.backgroundColor = hex;
+}
+
+
+function pad(n){
+    return (n.length<2) ? "0"+n : n;
 }
 
 

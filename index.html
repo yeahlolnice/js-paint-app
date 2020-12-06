@@ -10,21 +10,25 @@
 <body>
     <div class="painter">
         <canvas width="1000px" height="600px" id="paint"></canvas>
-        <button class="btn btn-danger" onclick="Clear()">Clear</button>
-        <div class="slidecontainer">
-            Red:
-            <input type="range" min="0" max="255" value="50" class="slider" id="redSlider">
-            <span id="redVal"></span>
-        </div>
-        <div class="slidecontainer">
-            Green:
-            <input type="range" min="0" max="255" value="50" class="slider" id="greenSlider">
-            <span id="greenVal"></span>
-        </div>
-        <div class="slidecontainer">
-            Blue:
-            <input type="range" min="0" max="255" value="50" class="slider" id="blueSlider">
-            <span id="blueVal"></span>
+        <div id="options">
+            <button class="btn btn-danger" onclick="Clear()">Clear</button>
+            <div class="sliders">
+                <div class="slidecontainer">
+                    Red:
+                    <input type="range" min="0" max="255" value="0" class="slider" id="redSlider">
+                    <span id="redVal"></span>
+                </div>
+                <div class="slidecontainer">
+                    Green:
+                    <input type="range" min="0" max="255" value="0" class="slider" id="greenSlider">
+                    <span id="greenVal"></span>
+                </div>
+                <div class="slidecontainer">
+                    Blue:
+                    <input type="range" min="0" max="255" value="0" class="slider" id="blueSlider">
+                    <span id="blueVal"></span>
+                </div> 
+            </div>
         </div>
     </div>
     <script defer src="main.js"></script>
